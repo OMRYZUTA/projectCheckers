@@ -10,6 +10,7 @@ typedef struct _SingleSourceMovesListCell{
 
 }SingleMovesListCell;
 
+
 typedef struct _SingleSourceMovesList{
 	SingleSourceMovesListCell *head;
 	SingleSourceMovesListCell *tail;
