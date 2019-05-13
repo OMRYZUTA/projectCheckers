@@ -5,13 +5,16 @@
 
 #define BOARD_SIZE 8
 
+
+
+
+
+
+
 // defintion of structs
-
-
-
 typedef struct _checkersPos
 {
-	char row , col;
+	char row, col;
 } checkersPos;
 
 typedef unsigned char Board[BOARD_SIZE][BOARD_SIZE];
