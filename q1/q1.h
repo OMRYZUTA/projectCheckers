@@ -5,12 +5,6 @@
 
 #define BOARD_SIZE 8
 
-
-
-
-
-
-
 // defintion of structs
 typedef struct _checkersPos
 {
