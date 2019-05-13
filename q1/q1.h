@@ -29,3 +29,9 @@ typedef struct _SingleSourceMovesTree {
 SingleSourceMovesTree * FindSingleSourceMoves(Board board, checkersPos *src);
 
 SingleSourceMovesTree * FindSingleSourceMovesRec(Board board, checkersPos *src);
+
+SingleSourceMovesTreeNode * CreatenewTreeNode(Board board, checkersPos * pos, unsigned short cap_so_far);
+
+void checkMemoryAllocation(void *ptr);
+
+void copyBoard(Board source, Board *dest);
