@@ -7,6 +7,8 @@
 
 // defintion of structs
 
+
+
 typedef struct _checkersPos
 {
 	char row , col;
