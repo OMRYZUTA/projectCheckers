@@ -9,11 +9,58 @@ SingleSourceMovesTree * FindSingleSourceMoves(Board board, checkersPos *src){
 		return NULL;
 	}
 	else {
-		FindTree();
+		BuildTree();
 		
 	}
 }
 
+
+SingleSourceMovesTree BuildTree(Board board, checkersPos *src){
+	SingleSourceMovesTree tree;
+	tree.source = BuildTreeRec(board, src,Player,0);
+
+	return tree;
+}
+
+SingleSourceMovesTreeNode * BuildTreeRec(Board board, checkersPos *src,Player player,unsigned short cap_so_far ){
+	int row, col;
+	//row and cols starts with 0
+	row = src->row - 'A';
+	col = src->col - '0' - 1;
+
+	if (rows > 8)
+		return NULL;
+	if (cols < 0)
+		rerturn NULL;
+	if (board[row][col] == player)
+		return NULL;
+	
+
+
+	SingleSourceMovesTreeNode * newNode;
+
+	newNode = CreatenewTreeNode(board, src, 0);
+	if (player == 'B')
+	{
+		checkersPos* left;
+		checkersPos* right;
+		left->row = row - 1;
+		left->col = col - 1;
+		right->row = row - 1;
+		right->col = col + 1;
+
+		if (board[left->row][col] != player && board[row][col] != '\0')
+		{
+			
+
+		}
+
+		newNode->next_move[0] = BuildTreeRec(board, left, player);
+		newNode->next_move[1] = BuildTreeRec(board, right, player);
+
+		return newNode;
+	}
+ }
 //create new treeNode
 
 SingleSourceMovesTreeNode * CreatenewTreeNode(Board board1, checkersPos * pos, unsigned short cap_so_far) {
