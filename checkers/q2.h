@@ -12,7 +12,7 @@ typedef struct _SingleSourceMovesListCell{
 
 typedef struct _SingleSourceMovesList{
 	SingleSourceMovesListCell *head;
-SingleSourceMovesListCell *tail;
-}SingleSourceMovesListCell;
+	SingleSourceMovesListCell *tail;
+}SingleSourceMovesList;
 
 SingleSourceMovesList * FindSingleSourceOptimalMove(SingleSourceMovesTree * moves_tree);
